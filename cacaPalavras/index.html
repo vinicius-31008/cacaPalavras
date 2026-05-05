@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Caça palavras</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="topo">
+    <h1>Caça palavras</h1>
+    <div class="controle">
+        <input id="resp" type="text" placeholder="digite sua resposta">
+        <button onclick="verificar()" type="button">Responder</button>
+    </div>
+</header>
+
+<section>
+
+    <div class="painel">
+
+        <p class="linha">1- Amigo do Giovane, Alves, Pedro, William e Marconi:
+            <span id="resposta1">...?</span>
+        </p>
+
+        <p class="linha">2- Amigo do Vinicius, Pedro e Giovane:
+            <span id="resposta2">...?</span>
+        </p>
+
+        <p class="linha">3- Amigo do Vinicius, Giovane e Alves:
+            <span id="resposta3">...?</span>
+        </p>
+
+        <p class="linha">4- Amigo do Vinicius, Pedro e Alves:
+            <span id="resposta4">...?</span>
+        </p>
+
+        <p class="linha">5- Amiga da Helen e da Sophia:
+            <span id="resposta5">...?</span>
+        </p>
+
+        <p class="linha">6- Amiga da Giovana e da Sophia:
+            <span id="resposta6">...?</span>
+        </p>
+
+        <p class="linha">7- Amiga da Helen e da Giovana:
+            <span id="resposta7">...?</span>
+        </p>
+
+        <p class="linha">8- Amigo do Alves, Pedro, Marconi, Giovane e Vinicius:
+            <span id="resposta8">...?</span>
+        </p>
+
+        <p class="linha">9- Amigo do Giovane, William, Alves, Pedro e Vinicius:
+            <span id="resposta9">...?</span>
+        </p>
+
+        <p class="linha">10- Pode ser a Carpenter ou a Sato:
+            <span id="resposta10">...?</span>
+        </p>
+
+        <p class="linha extra">EXTRA - meme famoso:
+            <span id="resposta11">...?</span>
+        </p>
+
+    </div>
+
+    <div class="tabuleiro">
+        <table>
+        <tr><td class="Vinicius">V</td><td class="Vinicius">I</td><td class="Vinicius">N</td><td class="Vinicius">I</td><td class="Vinicius">C</td><td class="Vinicius">I</td><td class="Vinicius">U</td><td class="Vinicius">S</td><td>Q</td><td>W</td><td>E</td><td>R</td><td>T</td><td class="Giovana">G</td></tr>
+        <tr><td class="Pedro">P</td><td class="Pedro">E</td><td class="Pedro">D</td><td class="Pedro">R</td><td class="Pedro">O</td><td class="Alves">A</td><td class="Alves">L</td><td class="Alves">V</td><td class="Alves">E</td><td class="Alves">S</td><td>U</td><td>I</td><td>O</td><td class="Giovana">I</td></tr>
+        <tr><td>N</td><td>S</td><td>L</td><td>H</td><td>A</td><td>M</td><td>R</td><td>S</td><td>D</td><td>F</td><td>G</td><td>H</td><td>J</td><td class="Giovana">O</td></tr>
+        <tr><td class="Giovane">G</td><td class="Giovane">I</td><td class="Giovane">O</td><td class="Giovane">V</td><td class="Giovane">A</td><td class="Giovane">N</td><td class="Giovane">E</td><td>M</td><td>G</td><td>I</td><td>O</td><td>V</td><td>A</td><td class="Giovana">V</td></tr>
+        <tr><td>A</td><td class="Sophia">S</td><td class="Sophia">O</td><td class="Sophia">P</td><td class="Sophia">H</td><td class="Sophia">I</td><td class="Sophia">A</td><td>Q</td><td>W</td><td>E</td><td>R</td><td>T</td><td>Y</td><td class="Giovana">A</td></tr>
+        <tr><td>G</td><td>E</td><td>L</td><td>E</td><td>N</td><td>Z</td><td>X</td><td>C</td><td>V</td><td>B</td><td>N</td><td>M</td><td>L</td><td class="Giovana">N</td></tr>
+        <tr><td class="William">W</td><td class="William">I</td><td class="William">L</td><td class="William">L</td><td class="William">I</td><td class="William">A</td><td class="William">M</td><td class="SV">N</td><td>A</td><td>S</td><td>D</td><td>F</td><td>G</td><td class="Giovana">A</td></tr>
+        <tr><td>Z</td><td>X</td><td>C</td><td>V</td><td>B</td><td class="Helen">N</td><td class="SV">E</td><td class="Marconi">M</td><td class="Marconi">A</td><td class="Marconi">R</td><td class="Marconi">C</td><td class="Marconi">O</td><td class="Marconi">N</td><td class="Marconi">I</td></tr>
+        <tr><td>B</td><td>A</td><td>Y</td><td>R</td><td>L</td><td class="SV">V</td><td class="Helen">E</td><td>C</td><td>K</td><td>R</td><td>B</td><td>E</td><td>N</td><td>T</td></tr>
+        <tr><td>E</td><td>R</td><td>Q</td><td>W</td><td class="SV">E</td><td>R</td><td>T</td><td class="Helen">L</td><td>U</td><td>I</td><td>O</td><td>P</td><td>L</td><td>K</td></tr>
+        <tr><td>A</td><td>Z</td><td>X</td><td class="SV">S</td><td>V</td><td>B</td><td>N</td><td>M</td><td class="Helen">E</td><td>W</td><td>E</td><td>R</td><td>T</td><td>Y</td></tr>
+        <tr><td>U</td><td>I</td><td class="SV">X</td><td>P</td><td>A</td><td>S</td><td>D</td><td>F</td><td>G</td><td class="Helen">H</td><td>J</td><td>K</td><td>L</td><td>Z</td></tr>
+        <tr><td>X</td><td class="SV">I</td><td>V</td><td>B</td><td>N</td><td>M</td><td>Q</td><td>W</td><td>E</td><td>R</td><td>K</td><td>Y</td><td>U</td><td>I</td></tr>
+        <tr><td class="SV">S</td><td class="Sabrina">A</td><td class="Sabrina">B</td><td class="Sabrina">R</td><td class="Sabrina">I</td><td class="Sabrina">N</td><td class="Sabrina">A</td><td>F</td><td>D</td><td>S</td><td>A</td><td>Q</td><td>W</td><td>E</td></tr>
+        </table>
+    </div>
+
+</section>
+
+<div id="vitoria" class="vitoria">
+    <div class="conteudo">
+        <h2>Nossa! Você farmou MUITA AURA!</h2>
+        <p>Você encontrou todas as palavras!</p>
+        <video width="400" controls autoplay loop muted>
+            <source src="meuvideo.mp4" type="video/mp4">
+        </video>
+        <br><br>
+        <button onclick="location.reload()">Jogar novamente</button>
+    </div>
+</div>
+
+<script>
+
+var respostas = {
+    "vinicius": { id: "resposta1", classe: "Vinicius" },
+    "alves": { id: "resposta2", classe: "Alves" },
+    "pedro": { id: "resposta3", classe: "Pedro" },
+    "giovane": { id: "resposta4", classe: "Giovane" },
+    "giovana": { id: "resposta5", classe: "Giovana" },
+    "helen": { id: "resposta6", classe: "Helen" },
+    "sophia": { id: "resposta7", classe: "Sophia" },
+    "william": { id: "resposta8", classe: "William" },
+    "marconi": { id: "resposta9", classe: "Marconi" },
+    "sabrina": { id: "resposta10", classe: "Sabrina" },
+    "six seven": { id: "resposta11", classe: "SV" }
+};
+
+let total = 0;
+const max = 11;
+
+function pintar(classe){
+    let letras = document.getElementsByClassName(classe);
+    for(let i=0;i<letras.length;i++){
+        letras[i].classList.add("acertou");
+    }
+}
+
+function verificar(){
+    let resp = document.getElementById("resp").value.toLowerCase().trim();
+
+    if(respostas[resp]){
+        let dados = respostas[resp];
+
+        document.getElementById(dados.id).innerHTML = resp;
+        pintar(dados.classe);
+
+        total++;
+
+        if(total === max){
+            document.getElementById("vitoria").style.display = "flex";
+        }
+
+        alert("correto");
+    } else {
+        alert("incorreto");
+    }
+
+    document.getElementById("resp").value = "";
+}
+
+</script>
+
+</body>
+</html>
