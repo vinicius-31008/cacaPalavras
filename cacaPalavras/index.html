@@ -117,6 +117,12 @@ var respostas = {
     "six seven": { id: "resposta11", classe: "SV" }
 };
 
+localStorage.setItem('respostas', JSON.stringify(respostas));
+
+let palavra = JSON.parse(localStorage.getItem('respostas'));
+
+console.log(palavra);
+
 let total = 0;
 const max = 11;
 
